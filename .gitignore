@@ -1,0 +1,21 @@
+# Sensitive files - NEVER commit these!
+secrets/
+srcs/.env
+.env
+
+# Docker volumes data
+/home/*/data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
