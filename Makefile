@@ -5,7 +5,7 @@ LOGIN = vtrofyme
 
 # Default target: build and start the containers
 all: setup
-	docker-compose -f $(SRCS) up --build -d
+	docker compose -f $(SRCS) up --build -d
 
 # Create local directories for volumes
 setup:
@@ -14,11 +14,11 @@ setup:
 
 # Stop containers
 stop:
-	docker-compose -f $(SRCS) stop
+	docker compose -f $(SRCS) stop
 
 # Down: stop and remove containers and networks
 down:
-	docker-compose -f $(SRCS) down
+	docker compose -f $(SRCS) down
 
 # Clean: remove containers, networks, and images
 clean: down
