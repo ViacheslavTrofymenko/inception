@@ -12,8 +12,8 @@ RUN apk update && \
 WORKDIR /usr/local/bin
 
 # Copy your tools and config
-COPY ./requirements/mariadb/tools/mariadb_init.sh .
-COPY ./requirements/mariadb/conf/50-server.cnf /etc/my.cnf.d/50-server.cnf
+COPY ./tools/mariadb_init.sh .
+COPY ./conf/mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf
 
 RUN chmod +x mariadb_init.sh
 

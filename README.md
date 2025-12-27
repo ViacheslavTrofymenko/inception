@@ -108,7 +108,7 @@ inception/
         ├── mariadb/
         │   ├── Dockerfile      # MariaDB image definition
         │   ├── conf/
-        │   │   └── 50-server.cnf
+        │   │   └──mariadb-server.cnf
         │   └── tools/
         │       └── mariadb_init.sh
         ├── nginx/
