@@ -31,6 +31,7 @@ clean: down
 # Full clean: everything + volumes
 fclean: clean
 	docker volume rm $$(docker volume ls -q)
+	sudo chown -R vtrofyme:vtrofyme /home/$(LOGIN)/data
 	rm -rf /home/$(LOGIN)/data
 
 re: fclean all

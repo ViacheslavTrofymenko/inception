@@ -42,6 +42,9 @@ if [ ! -f wp-config.php ]; then
         --role=author
 fi
 
+chown -R www-data:www-data /var/www/html/wp-content/uploads
+chmod -R 755 /var/www/html/wp-content/uploads
+
 echo "WordPress is ready!"
 # Start PHP-FPM as PID 1
 exec php-fpm82 -F
