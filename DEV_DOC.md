@@ -65,18 +65,18 @@ Create/modify `srcs/.env`:
 
 ```bash
 # Domain Configuration
-DOMAIN_NAME=vtrofyme.42.fr
+DOMAIN_NAME=
 
 # Database Configuration
-DB_NAME=wordpress
-DB_USER_NAME=wpuser
+DB_NAME=
+DB_USER_NAME=
 
 # WordPress Configuration
-WP_TITLE=Inception WordPress
-WP_ADMIN_NAME=vtrofyme_admin
-WP_ADMIN_EMAIL=vtrofyme@student.42.fr
-WP_AUTHOR_USER=author_vtrofyme
-WP_AUTHOR_EMAIL=author@student.42.fr
+WP_TITLE=
+WP_ADMIN_NAME=
+WP_ADMIN_EMAIL=
+WP_AUTHOR_USER=
+WP_AUTHOR_EMAIL=
 ```
 
 **Note**: Passwords are stored separately in the `secrets/` directory, NOT in the `.env` file.

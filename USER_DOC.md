@@ -101,7 +101,7 @@ secrets/
 ### WordPress Login
 
 **Administrator Account:**
-- Username: `vtrofyme_admin`
+- Username: `vtrofyme`
 - Password: Found in `secrets/wp_admin_password.txt`
 
 **Author Account:**
