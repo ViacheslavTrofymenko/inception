@@ -9,8 +9,12 @@ all: setup
 
 # Create local directories for volumes
 setup:
-	mkdir -p /home/$(LOGIN)/data/mariadb
-	mkdir -p /home/$(LOGIN)/data/wordpress
+	sudo mkdir -p /home/$(LOGIN)/data/mariadb
+	sudo mkdir -p /home/$(LOGIN)/data/wordpress
+	sudo chown -R 100:101 /home/$(LOGIN)/data/mariadb
+	sudo chmod -R 755 /home/$(LOGIN)/data/mariadb
+	sudo chown -R 82:82 /home/$(LOGIN)/data/wordpress
+	sudo chmod -R 775 /home/$(LOGIN)/data/wordpress
 
 # Stop containers
 stop:
@@ -27,6 +31,7 @@ clean: down
 # Full clean: everything + volumes
 fclean: clean
 	docker volume rm $$(docker volume ls -q)
+	sudo chown -R vtrofyme:vtrofyme /home/$(LOGIN)/data
 	rm -rf /home/$(LOGIN)/data
 
 re: fclean all

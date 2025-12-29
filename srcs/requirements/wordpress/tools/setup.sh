@@ -4,9 +4,12 @@
 DB_PASS=$(cat /run/secrets/db_password)
 
 echo "Checking MariaDB connection..."
-while ! mariadb-client -h mariadb -u "$DB_USER_NAME" -p"$DB_PASS" "$DB_NAME" &>/dev/null; do
+while ! mysql -h mariadb -u "$DB_USER_NAME" -p"$DB_PASS" "$DB_NAME" -e "SELECT 1;" &>/dev/null;
+do
+    echo "Waiting for MariaDB..."
     sleep 2
 done
+    echo "MariaDB is ready!!!"
 
 # Only install if WordPress is not already there (Idempotency)
 if [ ! -f wp-config.php ]; then
@@ -38,6 +41,9 @@ if [ ! -f wp-config.php ]; then
         --user_pass=${WP_AUTHOR_PASSWORD} \
         --role=author
 fi
+
+chown -R www-data:www-data /var/www/html/wp-content/uploads
+chmod -R 755 /var/www/html/wp-content/uploads
 
 echo "WordPress is ready!"
 # Start PHP-FPM as PID 1
