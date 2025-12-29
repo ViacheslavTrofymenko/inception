@@ -298,7 +298,7 @@ SELECT user_login, user_email FROM wp_users;
 ```
 
 You should see:
-1. Admin user (vtrofyme_admin)
+1. Admin user (vtrofyme)
 2. Author user (author_vtrofyme)
 
 ---
